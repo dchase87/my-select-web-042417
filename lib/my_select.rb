@@ -1,3 +1,9 @@
 def my_select(collection)
- # your code here!
+  new_collection = []
+  collection.select do |element|
+    if yield(element) == true
+      new_collection << element
+    end
+  end
+  new_collection
 end
